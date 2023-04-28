@@ -1,2 +1,2 @@
 # vyos-canary
-Managing my VyOS Router configuration
+Canary testing for VyOS images.
