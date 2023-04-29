@@ -66,3 +66,9 @@ git pull origin main
 git branch --set-upstream-to=origin/main main
 git checkout main -f
 ```
+
+## Upgrading System Image
+
+```shell
+add system image https://github.com/onedr0p/vyos/releases/download/v1.4-rolling-202304290305/vyos-1.4-rolling-202304290305-amd64.iso
+```
