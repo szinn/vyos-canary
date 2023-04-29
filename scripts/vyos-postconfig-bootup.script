@@ -1,0 +1,24 @@
+#!/bin/sh
+# This script is executed at boot time after VyOS configuration is fully
+# applied. Any modifications required to work around unfixed bugs or use
+# services not available through the VyOS CLI system can be placed here.
+
+# Add dotfiles for home directory
+tee /home/vyos/.gitconfig <<END >/dev/null
+[init]
+  defaultBranch = main
+[safe]
+  directory = /config
+[user]
+  email = scotte@zinn.ca
+  name = Scotte Zinn
+[rebase]
+  autoStash = true
+END
+#
+tee -a /home/vyos/.bash_aliases <<END >/dev/null
+export SOPS_AGE_KEY_FILE=/config/secrets/age.key
+export VISUAL=vi
+export EDITOR=vi
+END
+#
