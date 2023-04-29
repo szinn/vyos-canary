@@ -44,13 +44,12 @@ set firewall name services-wan default-action 'accept'
 
 # From WAN to LAN
 set firewall name wan-lan description 'From WAN to LAN'
-set firewall name wan-lan default-action 'drop'
-set firewall name wan-lan enable-default-log
+set firewall name wan-lan default-action 'accept'
 
 # From WAN to LOCAL
 set firewall name wan-local description 'From WAN to LOCAL'
-set firewall name wan-local default-action 'drop'
+set firewall name wan-local default-action 'accept'
 
 # From WAN to SERVICES
 set firewall name wan-services description 'From WAN to SERVICES'
-set firewall name wan-services default-action 'drop'
+set firewall name wan-services default-action 'accept'
