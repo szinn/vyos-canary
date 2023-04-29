@@ -57,9 +57,12 @@ using your vyos credentials.
 
 ```shell
 cd /config
+rm -f scripts/vyos-postconfig-bootup.script
+git config --global init.defaultBranch main
 git config --global --add safe.directory /config
 git init
 git remote add origin https://github.com/szinn/vyos-canary.git
+git pull origin main
 git branch --set-upstream-to=origin/main main
 git checkout main -f
 ```

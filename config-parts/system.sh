@@ -1,6 +1,5 @@
 #!/bin/vbash
 
-set system host-name 'canary'
 set system login banner post-login 'Welcome to VyOS Canary'
 
 set system ipv6 disable-forwarding
