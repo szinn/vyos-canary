@@ -3,6 +3,7 @@ locals {
 
   vyos_iso = "local:iso/vyos-1.4-rolling-202303310306-amd64.iso"
 
+  network_20_macaddr = "DE:CA:FF:20:00:F0"  
   network_98_macaddr = "DE:CA:FF:98:01:F0"  
   network_99_macaddr = "DE:CA:FF:99:02:F0"  
 }
