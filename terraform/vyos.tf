@@ -28,7 +28,7 @@ resource "proxmox_vm_qemu" "vyos" {
     model    = "virtio"
     bridge   = "vmbr0"
     macaddr  = local.network_20_macaddr
-    tag      = 98
+    tag      = 20
     firewall = false
     mtu      = 1500
     queues   = 0
