@@ -10,7 +10,7 @@ set firewall zone services description 'VyOS services zone'
 set firewall zone services default-action 'drop'
 set firewall zone services from local firewall name 'local-services'
 set firewall zone services from wan firewall name 'wan-services'
-set firewall zone services interface 'cni-services'
+set firewall zone services interface 'pod-services'
 
 set firewall zone wan description 'WAN'
 set firewall zone wan default-action 'drop'
