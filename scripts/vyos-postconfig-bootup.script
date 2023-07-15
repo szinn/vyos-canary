@@ -4,7 +4,8 @@
 # services not available through the VyOS CLI system can be placed here.
 
 # Add dotfiles for home directory
-tee /home/vyos/.gitconfig <<END >/dev/null
+if [ -d "/home/vyos" ]; then
+	tee /home/vyos/.gitconfig <<END >/dev/null
 [init]
   defaultBranch = main
 [safe]
@@ -14,11 +15,16 @@ tee /home/vyos/.gitconfig <<END >/dev/null
   name = Scotte Zinn
 [rebase]
   autoStash = true
+[pull]
+  rebase = true
 END
-#
-tee -a /home/vyos/.bash_aliases <<END >/dev/null
+	chown vyos:users /home/vyos/.gitconfig
+	#
+	tee -a /home/vyos/.bash_aliases <<END >/dev/null
 export SOPS_AGE_KEY_FILE=/config/secrets/age.key
 export VISUAL=vi
 export EDITOR=vi
 END
+	chown vyos:users /home/vyos/.bash_aliases
+fi
 #
