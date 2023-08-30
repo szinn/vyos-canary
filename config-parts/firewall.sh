@@ -1,9 +1,15 @@
 #!/bin/vbash
 
-# General configuration
-set firewall state-policy established action 'accept'
-set firewall state-policy invalid action 'drop'
-set firewall state-policy related action 'accept'
+# Interface groups
+set firewall group interface-group IG_guest interface 'eth0.199'
+set firewall group interface-group IG_homelab interface 'eth0.111'
+set firewall group interface-group IG_iot interface 'eth0.198'
+set firewall group interface-group IG_lan interface 'eth0.200'
+set firewall group interface-group IG_servers interface 'eth0.110'
+set firewall group interface-group IG_services interface 'pod-services'
+set firewall group interface-group IG_staging interface 'eth0.112'
+set firewall group interface-group IG_trusted interface 'eth0.120'
+set firewall group interface-group IG_wan interface 'eth0'
 
 # Services containers
 set firewall group address-group unifi-controller address '10.201.5.2'
