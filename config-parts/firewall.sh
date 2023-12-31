@@ -1,15 +1,10 @@
 #!/bin/vbash
 
-# Interface groups
-set firewall group interface-group IG_guest interface 'eth0.199'
-set firewall group interface-group IG_homelab interface 'eth0.111'
-set firewall group interface-group IG_iot interface 'eth0.198'
-set firewall group interface-group IG_lan interface 'eth0.200'
-set firewall group interface-group IG_servers interface 'eth0.110'
-set firewall group interface-group IG_services interface 'pod-services'
-set firewall group interface-group IG_staging interface 'eth0.112'
-set firewall group interface-group IG_trusted interface 'eth0.120'
-set firewall group interface-group IG_wan interface 'eth0'
+# General configuration
+set firewall global-options state-policy established action 'accept'
+set firewall global-options state-policy related action 'accept'
+set firewall global-options all-ping enable
+set firewall global-options broadcast-ping disable
 
 # Services containers
 set firewall group address-group unifi-controller address '10.201.5.2'
