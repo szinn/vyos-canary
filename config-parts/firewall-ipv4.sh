@@ -1,7 +1,7 @@
 #!/bin/vbash
 # shellcheck disable=all
 
-function allow_traffic_ntp {
+function allow-traffic-ntp {
   zone=$1
 
   # set firewall ipv4 name $zone rule 100 description 'Rule: accept ntp'
@@ -10,7 +10,7 @@ function allow_traffic_ntp {
   set firewall ipv4 name $zone rule 100 protocol 'udp'
 }
 
-function allow_traffic_dhcp {
+function allow-traffic-dhcp {
   zone=$1
 
   # set firewall ipv4 name $zone rule 110 description 'Rule: accept dhcp'
@@ -20,7 +20,7 @@ function allow_traffic_dhcp {
   set firewall ipv4 name $zone rule 110 protocol 'udp'
 }
 
-function allow_traffic_igmp {
+function allow-traffic-igmp {
   zone=$1
 
   # set firewall ipv4 name $zone rule 120 description 'Rule: accept igmp'
@@ -28,7 +28,7 @@ function allow_traffic_igmp {
   set firewall ipv4 name $zone rule 120 protocol '2'
 }
 
-function allow_traffic_mdns {
+function allow-traffic-mdns {
   zone=$1
 
   # set firewall ipv4 name $zone rule 130 description 'Rule: accept mdns'
@@ -38,7 +38,7 @@ function allow_traffic_mdns {
   set firewall ipv4 name $zone rule 130 protocol 'udp'
 }
 
-function allow_traffic_icmp {
+function allow-traffic-icmp {
   zone=$1
 
   # set firewall ipv4 name $zone rule 140 description 'Rule: accept icmp'
@@ -46,7 +46,7 @@ function allow_traffic_icmp {
   set firewall ipv4 name $zone rule 140 protocol 'icmp'
 }
 
-function allow_traffic_bgp {
+function allow-traffic-bgp {
   zone=$1
 
   # set firewall ipv4 name $zone rule 150 description 'Rule: accept bgp'
@@ -55,7 +55,7 @@ function allow_traffic_bgp {
   set firewall ipv4 name $zone rule 150 protocol 'tcp'
 }
 
-function allow_traffic_ssh {
+function allow-traffic-ssh {
   zone=$1
 
   # set firewall ipv4 name $zone rule 160 description 'Rule: accept ssh'
@@ -64,7 +64,7 @@ function allow_traffic_ssh {
   set firewall ipv4 name $zone rule 160 protocol 'tcp'
 }
 
-function allow_traffic_dns {
+function allow-traffic-dns {
   zone=$1
 
   # set firewall ipv4 name $zone rule 170 description 'Rule: accept dns'
@@ -73,7 +73,7 @@ function allow_traffic_dns {
   set firewall ipv4 name $zone rule 170 protocol 'tcp_udp'
 }
 
-function allow_traffic_wireguard {
+function allow-traffic-wireguard {
   zone=$1
 
   # set firewall ipv4 name $zone rule 180 description 'Rule: accept wireguard'
@@ -82,7 +82,7 @@ function allow_traffic_wireguard {
   set firewall ipv4 name $zone rule 180 protocol 'udp'
 }
 
-function allow_traffic_plex {
+function allow-traffic-plex {
   zone=$1
 
   # set firewall ipv4 name $zone rule 370 description 'Rule: accept plex users'
@@ -93,7 +93,7 @@ function allow_traffic_plex {
   set firewall ipv4 name $zone rule 370 protocol 'tcp'
 }
 
-function allow_traffic_printer {
+function allow-traffic-printer {
   zone=$1
 
   # set firewall ipv4 name $zone rule 380 description 'Rule: accept_tcp_printer_from_allowed_devices'
@@ -103,7 +103,7 @@ function allow_traffic_printer {
   set firewall ipv4 name $zone rule 380 protocol 'tcp'
 }
 
-function allow_traffic_scanner {
+function allow-traffic-scanner {
   zone=$1
 
   # set firewall ipv4 name $zone rule 360 description 'Rule: accept scanner traffic'
@@ -113,7 +113,7 @@ function allow_traffic_scanner {
   set firewall ipv4 name $zone rule 360 protocol 'udp'
 }
 
-function allow_traffic_sonos {
+function allow-traffic-sonos {
   zone=$1
 
   # set firewall ipv4 name $zone rule 400 description 'Rule: accept_discovery_from_sonos_controllers'
@@ -168,7 +168,7 @@ function allow_traffic_sonos {
   set firewall ipv4 name $zone rule 460 protocol 'tcp'
 }
 
-function allow_traffic_rtsp {
+function allow-traffic-rtsp {
   zone=$1
 
   # set firewall ipv4 name $zone rule 500 description 'Rule: accept rtsp'
@@ -176,7 +176,7 @@ function allow_traffic_rtsp {
   set firewall ipv4 name $zone rule 500 destination group address-group 'unifi-unvr'
 }
 
-function allow_traffic_iperf {
+function allow-traffic-iperf {
   zone=$1
 
   # set firewall ipv4 name $zone rule 330 description 'Rule: accept iperf'
@@ -185,7 +185,7 @@ function allow_traffic_iperf {
   set firewall ipv4 name $zone rule 330 protocol 'tcp'
 }
 
-function allow_traffic_scottes_devices {
+function allow-traffic-scottes_devices {
   zone=$1
 
   # set firewall ipv4 name $zone rule 520 description 'Rule: accept scotte'
@@ -193,7 +193,7 @@ function allow_traffic_scottes_devices {
   set firewall ipv4 name $zone rule 520 source group address-group 'scotte-devices'
 }
 
-function allow_traffic_sophies_devices {
+function allow-traffic-sophies_devices {
   zone=$1
 
   # set firewall ipv4 name $zone rule 530 description 'Rule: accept sophie'
@@ -201,7 +201,7 @@ function allow_traffic_sophies_devices {
   set firewall ipv4 name $zone rule 530 source group address-group 'sophie-devices'
 }
 
-function allow_traffic_prometheus {
+function allow-traffic-prometheus {
   zone=$1
 
   # set firewall ipv4 name $zone rule 350 description 'Rule: accept prometheus metrics scrape'
@@ -210,7 +210,7 @@ function allow_traffic_prometheus {
   set firewall ipv4 name $zone rule 350 protocol 'tcp'
 }
 
-function allow_traffic_vector {
+function allow-traffic-vector {
   zone=$1
 
   # set firewall ipv4 name $zone rule 310 description 'Rule: accept vector syslog'
@@ -219,7 +219,7 @@ function allow_traffic_vector {
   set firewall ipv4 name $zone rule 310 protocol 'tcp'
 }
 
-function allow_traffic_unifi {
+function allow-traffic-unifi {
   zone=$1
 
   # set firewall ipv4 name $zone rule 300 description 'Rule: accept unifi'
@@ -230,7 +230,7 @@ function allow_traffic_unifi {
   set firewall ipv4 name $zone rule 540 source group address-group 'unifi-cameras'
 }
 
-function drop_traffic_multicast-224 {
+function drop-traffic-multicast-224 {
   zone=$1
 
   # set firewall ipv4 name $zone rule 910 description 'Rule: drop multicast to 224.0.0.1 (no log)'
@@ -239,7 +239,7 @@ function drop_traffic_multicast-224 {
   set firewall ipv4 name $zone rule 910 protocol '2'
 }
 
-function drop_traffic_port-10001 {
+function drop-traffic-port-10001 {
   zone=$1
 
   # set firewall ipv4 name $zone rule 900 description 'Rule: drop 10001 (no log)'
@@ -248,175 +248,184 @@ function drop_traffic_port-10001 {
   set firewall ipv4 name $zone rule 900 protocol 'udp'
 }
 
-function drop_traffic_scansnap_probe {
+function drop-traffic-scansnap_probe {
   zone=$1
 
-  set firewall ipv4 name $zone rule 50 action 'drop'
-  set firewall ipv4 name $zone rule 50 description 'Rule: ignore scansnap probe'
-  set firewall ipv4 name $zone rule 50 destination address '255.255.255.255'
-  set firewall ipv4 name $zone rule 50 destination port '52217'
-  set firewall ipv4 name $zone rule 50 protocol 'udp'
-  set firewall ipv4 name $zone rule 50 source group address-group 'scanner-clients'
+  set firewall ipv4 name $zone rule 999 action 'drop'
+  set firewall ipv4 name $zone rule 999 description 'Rule: ignore scansnap probe'
+  set firewall ipv4 name $zone rule 999 destination address '255.255.255.255'
+  set firewall ipv4 name $zone rule 999 destination port '52217'
+  set firewall ipv4 name $zone rule 999 protocol 'udp'
+  set firewall ipv4 name $zone rule 999 source group address-group 'scanner-clients'
 }
 
-create_firewall_rules guest
+function drop-traffic-invalid {
+  zone=$1
+
+  set firewall ipv4 name $zone rule 999 action 'drop'
+  set firewall ipv4 name $zone rule 999 description 'Rule: drop_invalid'
+  set firewall ipv4 name $zone rule 999 state invalid
+  set firewall ipv4 name $zone rule 999 log
+}
+
+create-firewall-rules guest
   interfaces eth0.199
-  to_vlan homelab drop-log
-    allow_traffic plex
-  to_vlan iot drop-log
-    allow_traffic printer sonos
-  to_vlan lan drop-log
-  to_vlan local drop-log
-    allow_traffic dhcp igmp mdns ntp sonos
-  to_vlan servers drop-log
-  to_vlan services drop-log
-    allow_traffic dns
-  to_vlan staging drop-log
-  to_vlan trusted drop-log
-  to_vlan wan accept
+  to-vlan homelab drop-log
+    allow-traffic plex
+  to-vlan iot drop-log
+    allow-traffic printer sonos
+  to-vlan lan drop-log
+  to-vlan local drop-log
+    allow-traffic dhcp igmp mdns ntp sonos
+  to-vlan servers drop-log
+  to-vlan services drop-log
+    allow-traffic dns
+  to-vlan staging drop-log
+  to-vlan trusted drop-log
+  to-vlan wan accept
 
-create_firewall_rules homelab
+create-firewall-rules homelab
   interfaces eth0.111
-  to_vlan guest drop-log
-  to_vlan iot accept
-  to_vlan lan drop-log
-    allow_traffic icmp rtsp
-  to_vlan local drop-log
-    allow_traffic bgp dhcp icmp iperf ntp sonos prometheus
-    drop_traffic multicast-224
-  to_vlan servers accept
-  to_vlan services accept
-  to_vlan staging accept
-  to_vlan trusted drop
-    allow_traffic icmp
-  to_vlan wan accept
+  to-vlan guest drop-log
+  to-vlan iot accept
+  to-vlan lan drop-log
+    allow-traffic icmp rtsp
+  to-vlan local drop-log
+    allow-traffic bgp dhcp icmp iperf ntp sonos prometheus
+    drop-traffic multicast-224
+  to-vlan servers accept
+  to-vlan services accept
+  to-vlan staging accept
+  to-vlan trusted drop
+    allow-traffic icmp
+  to-vlan wan accept
 
-create_firewall_rules iot
+create-firewall-rules iot
   interfaces eth0.198
-  to_vlan guest drop-log
-    allow_traffic sonos
-  to_vlan homelab drop-log
-    allow_traffic plex sonos
-  to_vlan lan drop-log
-  to_vlan local drop-log
-    allow_traffic dhcp igmp mdns ntp sonos
-  to_vlan servers drop-log
-  to_vlan services drop-log
-  to_vlan staging drop-log
-  to_vlan trusted drop-log
-    allow_traffic sonos scanner
-  to_vlan wan accept
+  to-vlan guest drop-log
+    allow-traffic sonos
+  to-vlan homelab drop-log
+    allow-traffic plex sonos
+  to-vlan lan drop-log
+  to-vlan local drop-log
+    allow-traffic dhcp igmp mdns ntp sonos
+  to-vlan servers drop-log
+  to-vlan services drop-log
+  to-vlan staging drop-log
+  to-vlan trusted drop-log
+    allow-traffic sonos scanner
+  to-vlan wan accept
 
-create_firewall_rules lan
+create-firewall-rules lan
   interfaces eth0.200
-  to_vlan guest drop-log
-  to_vlan homelab drop-log
-  to_vlan iot drop-log
-  to_vlan local drop-log
-    allow_traffic dhcp ntp ssh
-    drop_traffic multicast-224 port-10001
-  to_vlan servers drop-log
-  to_vlan services accept-log
-    allow_traffic dns unifi
-  to_vlan staging drop-log
-  to_vlan trusted drop-log
-    drop_traffic port-10001
-  to_vlan wan accept
+  to-vlan guest drop-log
+  to-vlan homelab drop-log
+  to-vlan iot drop-log
+  to-vlan local drop-log
+    allow-traffic dhcp ntp ssh
+    drop-traffic multicast-224 port-10001
+  to-vlan servers drop-log
+  to-vlan services accept-log
+    allow-traffic dns unifi
+  to-vlan staging drop-log
+  to-vlan trusted drop-log
+    drop-traffic port-10001
+  to-vlan wan accept
 
-create_firewall_rules local
+create-firewall-rules local
   interfaces local-zone
-  to_vlan guest drop-log
-    allow_traffic igmp mdns sonos
-  to_vlan homelab drop-log
-    allow_traffic bgp icmp sonos vector
-  to_vlan iot drop-log
-    allow_traffic icmp igmp mdns sonos
-  to_vlan lan drop-log
-    allow_traffic icmp ssh
-  to_vlan servers drop-log
-    allow_traffic bgp icmp
-  to_vlan services accept
-  to_vlan staging drop-log
-    allow_traffic bgp icmp
-  to_vlan trusted drop-log
-    allow_traffic icmp igmp mdns sonos wireguard
-  to_vlan wan accept
+  to-vlan guest drop-log
+    allow-traffic igmp mdns sonos
+  to-vlan homelab drop-log
+    allow-traffic bgp icmp sonos vector
+  to-vlan iot drop-log
+    allow-traffic icmp igmp mdns sonos
+  to-vlan lan drop-log
+    allow-traffic icmp ssh
+  to-vlan servers drop-log
+    allow-traffic bgp icmp
+  to-vlan services accept
+  to-vlan staging drop-log
+    allow-traffic bgp icmp
+  to-vlan trusted drop-log
+    allow-traffic icmp igmp mdns sonos wireguard
+  to-vlan wan accept
 
-create_firewall_rules servers
+create-firewall-rules servers
   interfaces eth0.110
-  to_vlan guest drop-log
-  to_vlan homelab accept
-  to_vlan iot accept
-  to_vlan lan drop-log
-    allow_traffic icmp rtsp
-  to_vlan local drop-log
-    allow_traffic bgp dhcp icmp iperf ntp ssh
-    drop_traffic multicast-224
-  to_vlan services accept
-  to_vlan staging accept
-  to_vlan trusted drop
-    allow_traffic icmp ssh
-  to_vlan wan accept
+  to-vlan guest drop-log
+  to-vlan homelab accept
+  to-vlan iot accept
+  to-vlan lan drop-log
+    allow-traffic icmp rtsp
+  to-vlan local drop-log
+    allow-traffic bgp dhcp icmp iperf ntp ssh
+    drop-traffic multicast-224
+  to-vlan services accept
+  to-vlan staging accept
+  to-vlan trusted drop
+    allow-traffic icmp ssh
+  to-vlan wan accept
 
-create_firewall_rules services
+create-firewall-rules services
   interfaces pod-services
-  to_vlan guest drop-log
-  to_vlan homelab accept
-  to_vlan iot drop-log
-    allow_traffic icmp
-  to_vlan lan accept-log
-    allow_traffic icmp
-  to_vlan local drop-log
-    allow_traffic ntp
-  to_vlan servers accept
-  to_vlan staging accept
-  to_vlan trusted drop-log
-  to_vlan wan accept
+  to-vlan guest drop-log
+  to-vlan homelab accept
+  to-vlan iot drop-log
+    allow-traffic icmp
+  to-vlan lan accept-log
+    allow-traffic icmp
+  to-vlan local drop-log
+    allow-traffic ntp
+  to-vlan servers accept
+  to-vlan staging accept
+  to-vlan trusted drop-log
+  to-vlan wan accept
 
-create_firewall_rules staging
+create-firewall-rules staging
   interfaces eth0.112
-  to_vlan guest drop-log
-  to_vlan homelab accept
-  to_vlan iot accept
-  to_vlan lan drop-log
-    allow_traffic icmp
-  to_vlan local drop-log
-    allow_traffic bgp dhcp icmp ntp
-    drop_traffic multicast-224
-  to_vlan servers accept
-  to_vlan services accept
-  to_vlan trusted drop
-    allow_traffic icmp
-  to_vlan wan accept
+  to-vlan guest drop-log
+  to-vlan homelab accept
+  to-vlan iot accept
+  to-vlan lan drop-log
+    allow-traffic icmp
+  to-vlan local drop-log
+    allow-traffic bgp dhcp icmp ntp
+    drop-traffic multicast-224
+  to-vlan servers accept
+  to-vlan services accept
+  to-vlan trusted drop
+    allow-traffic icmp
+  to-vlan wan accept
 
-create_firewall_rules trusted
+create-firewall-rules trusted
   interfaces eth0.120
-  to_vlan guest drop-log
-  to_vlan homelab drop-log
-    allow_traffic scottes_devices sophies_devices
-  to_vlan iot accept
-    allow_traffic sonos
-  to_vlan lan drop-log
-    allow_traffic scottes_devices unifi
-  to_vlan local drop-log
-    allow_traffic dhcp icmp igmp iperf mdns ntp ssh sonos scottes_devices
-    drop_traffic scansnap_probe
-  to_vlan servers drop-log
-    allow_traffic scottes_devices sophies_devices
-  to_vlan services accept
-  to_vlan staging drop-log
-    allow_traffic scottes_devices
-  to_vlan wan accept
+  to-vlan guest drop-log
+  to-vlan homelab drop-log
+    allow-traffic scottes_devices sophies_devices
+  to-vlan iot accept
+    allow-traffic sonos
+  to-vlan lan drop-log
+    allow-traffic scottes_devices unifi
+  to-vlan local drop-log
+    allow-traffic dhcp icmp igmp iperf mdns ntp ssh sonos scottes_devices
+    drop-traffic scansnap_probe
+  to-vlan servers drop-log
+    allow-traffic scottes_devices sophies_devices
+  to-vlan services accept
+  to-vlan staging drop-log
+    allow-traffic scottes_devices
+  to-vlan wan accept
 
-create_firewall_rules wan
+create-firewall-rules wan
   interfaces eth0
-  to_vlan guest drop-log
-  to_vlan homelab drop-log
-  to_vlan iot drop-log
-  to_vlan lan drop-log
-  to_vlan local drop-log
-    allow_traffic wireguard
-  to_vlan servers drop-log
-  to_vlan services drop-log
-  to_vlan staging drop-log
-  to_vlan trusted drop-log
+  to-vlan guest drop-log
+  to-vlan homelab drop-log
+  to-vlan iot drop-log
+  to-vlan lan drop-log
+  to-vlan local drop-log
+    allow-traffic wireguard
+  to-vlan servers drop-log
+  to-vlan services drop-log
+  to-vlan staging drop-log
+  to-vlan trusted drop-log
