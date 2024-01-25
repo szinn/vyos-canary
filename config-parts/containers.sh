@@ -96,6 +96,32 @@ set container name staging-k8s-api volume config source '/config/containers/stag
 set container name staging-k8s-api volume config destination '/usr/local/etc/haproxy/haproxy.cfg'
 set container name staging-k8s-api volume config mode 'ro'
 
+# udp-broadcast-relay-mdns
+set container name udp-broadcast-relay-mdns allow-host-networks
+set container name udp-broadcast-relay-mdns cap-add 'net-raw'
+set container name udp-broadcast-relay-mdns environment CFG_DEV value 'bond0.120;bond0.198;bond0.199'
+set container name udp-broadcast-relay-mdns environment CFG_ID value '2'
+set container name udp-broadcast-relay-mdns environment CFG_MULTICAST value '224.0.0.251'
+set container name udp-broadcast-relay-mdns environment CFG_PORT value '5353'
+set container name udp-broadcast-relay-mdns environment SEPARATOR value ';'
+set container name udp-broadcast-relay-mdns image 'ghcr.io/onedr0p/udp-broadcast-relay-redux:1.0.27'
+set container name udp-broadcast-relay-mdns memory '0'
+set container name udp-broadcast-relay-mdns restart 'on-failure'
+set container name udp-broadcast-relay-mdns shared-memory '0'
+
+# udp-broadcast-relay-sonos
+set container name udp-broadcast-relay-sonos allow-host-networks
+set container name udp-broadcast-relay-sonos cap-add 'net-raw'
+set container name udp-broadcast-relay-sonos environment CFG_DEV value 'bond0.120;bond0.198;bond0.199'
+set container name udp-broadcast-relay-sonos environment CFG_ID value '1'
+set container name udp-broadcast-relay-sonos environment CFG_MULTICAST value '239.255.255.250'
+set container name udp-broadcast-relay-sonos environment CFG_PORT value '1900'
+set container name udp-broadcast-relay-sonos environment SEPARATOR value ';'
+set container name udp-broadcast-relay-sonos image 'ghcr.io/onedr0p/udp-broadcast-relay-redux:1.0.27'
+set container name udp-broadcast-relay-sonos memory '0'
+set container name udp-broadcast-relay-sonos restart 'on-failure'
+set container name udp-broadcast-relay-sonos shared-memory '0'
+
 # speedtest-exporter
 set container name speedtest-exporter image 'ghcr.io/miguelndecarvalho/speedtest-exporter:v3.5.3'
 set container name speedtest-exporter memory '0'

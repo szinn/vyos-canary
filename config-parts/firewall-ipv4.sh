@@ -251,12 +251,12 @@ function drop-traffic-port-10001 {
 function drop-traffic-scansnap_probe {
   zone=$1
 
-  set firewall ipv4 name $zone rule 999 action 'drop'
-  set firewall ipv4 name $zone rule 999 description 'Rule: ignore scansnap probe'
-  set firewall ipv4 name $zone rule 999 destination address '255.255.255.255'
-  set firewall ipv4 name $zone rule 999 destination port '52217'
-  set firewall ipv4 name $zone rule 999 protocol 'udp'
-  set firewall ipv4 name $zone rule 999 source group address-group 'scanner-clients'
+  set firewall ipv4 name $zone rule 990 action 'drop'
+  set firewall ipv4 name $zone rule 990 description 'Rule: ignore scansnap probe'
+  set firewall ipv4 name $zone rule 990 destination address '255.255.255.255'
+  set firewall ipv4 name $zone rule 990 destination port '52217'
+  set firewall ipv4 name $zone rule 990 protocol 'udp'
+  set firewall ipv4 name $zone rule 990 source group address-group 'scanner-clients'
 }
 
 function drop-traffic-invalid {
