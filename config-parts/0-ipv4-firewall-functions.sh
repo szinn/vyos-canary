@@ -25,14 +25,14 @@ function to-vlan {
       ;;
     drop-log)
       set firewall ipv4 name ${ZONE} default-action 'drop'
-      set firewall ipv4 name ${ZONE} enable-default-log
+      set firewall ipv4 name ${ZONE} default-log
       ;;
     accept)
       set firewall ipv4 name ${ZONE} default-action 'accept'
       ;;
     accept-log)
       set firewall ipv4 name ${ZONE} default-action 'accept'
-      set firewall ipv4 name ${ZONE} enable-default-log
+      set firewall ipv4 name ${ZONE} default-log
       ;;
   esac
 }
